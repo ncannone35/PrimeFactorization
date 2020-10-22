@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            int in = scan.nextInt();
+            int primeCount = 0;
+            ArrayList<Integer> list = new ArrayList<Integer>();
+            factorize(in, list);
+
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i) + " ");
+            }
+        }
+    }
+
+    public static void factorize(int in, ArrayList<Integer> list) {
+        int primeCount = 0;
+        for (int i = 1; i <= in; i++) {
+            for (int j = 1; j <= in; j++) {
+                if (i % j == 0) {
+                    primeCount++;
+                    if (primeCount > 2) {
+                        if (in % i == 0) {
+                            list.add(i);
+                            in = in / i;
+                            i--;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
