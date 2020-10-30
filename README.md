@@ -1,4 +1,4 @@
 # PrimeFactorization
-Inefficient lol
+Inefficient lol soo many nested loops
 
 Made this for math homework
